@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .accordion:after {
+      content: '\002B';
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+
+    .RunButton {
+      text-decoration: none;
+      text-align: center;
+      padding: 11px 32px;
+      border: solid 1px #004F72;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      font: 18px Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: #E5FFFF;
+      background-color: #3349db;
+      background-image: -moz-linear-gradient(top, #3349db 0%, #1982A5 100%);
+      background-image: -webkit-linear-gradient(top, #3349db 0%, #1982A5 100%);
+      background-image: -o-linear-gradient(top, #3349db 0%, #1982A5 100%);
+      background-image: -ms-linear-gradient(top, #3349db 0%, #1982A5 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1982A5', endColorstr='#1982A5', GradientType=0);
+      background-image: linear-gradient(top, #3349db 0%, #1982A5 100%);
+      -webkit-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+      -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+      box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+    }
+    .mytext {
+      font-family: arial, helvetica, sans-serif;
+      font-size: medium;
+    }
+  </style>
+  <script>
+    function test51() {
+      var x = parseInt(prompt("Insert a X"));
+      alert(x * x + 2 * x - 1);
+    }
+
+    function test52() {
+      var x = parseInt(prompt("Insert a X"));
+      var y = parseInt(prompt("Insert a Y"));
+      if (x % y == 0) {
+        alert("DIVISION");
+      } else {
+        alert("NOT DIVISION");
+      }
+    }
+
+    function test53() {
+      name = prompt("Enter Name");
+      surname = prompt("Enter Surname");
+      city = prompt("Enter city");
+      age = prompt("Enter Age");
+      alert("Name: " + name + "\n" + "Surname: " + surname + "\n" + "City: " + city + "\n" + "Age" + parseInt(age));
+    }
+
+    function test54() {
+      a = parseInt(prompt("Enter A:"));
+      b = parseInt(prompt("Enter B:"));
+      c = parseInt(prompt("Enter C:"));
+      alert("a + b + c = " + (a + b + c) + "\n" +
+        "a – b – c = " + (a - b - c) + "\n" +
+        "a * b * c = " + (a * b * c));
+    }
+
+    function test55() {
+      n = parseInt(prompt("Enter n"));
+      k = parseInt(prompt("Enter k"));
+      alert("k/n = " + parseInt(k/n));
+    }
+
+    function test56() {
+      a = parseInt(prompt("Enter a"));
+      b = parseInt(prompt("Enter b"));
+      c = parseFloat((a*a + b*b));
+      c = Math.sqrt(c);
+
+      alert("hypotenuse = " + c);
+    }
+    function test57() {
+      a = parseInt(prompt("Enter speed (km/h)"));
+      b = parseInt(prompt("Enter distance (km)"));
+      c = parseFloat(b/a*60);
+      const d = 135;
+
+      if (c < d) alert("YES, YOU CAN REACH");
+      else alert("NO, YOU CAN NOT REACH");
+    }
+    function test58() {
+      a = parseInt(prompt("Enter the number of packs Whiskas(R)"));
+      const b = 120;
+      c = a*b;
+      if (c >= 4000) alert(c - parseFloat(c/10));
+      else alert(c);
+
+    }
+    function test59() {
+      a = parseInt(prompt("INSERT YOUR AMOUNT IN KZT"));
+      b = parseInt(prompt("Enter choise " + "\n" +
+        "1- CONVERT TO USD"+ "\n" +
+        "2- CONVERT TO EUR" + "\n" +
+        "3- CONVERT TO GBP"));
+    if (b==1) alert(a/380);
+    else if (b==2) alert(a/430);
+    else alert(a/480);
+    }
+    function test510() {
+      a = prompt("Enter login");
+      b = prompt("Enter password");
+      if ((a=="user") && (b=="qwerty")) alert("Authentication completed");
+      else alert("Invalid login or password");
+    }
+    function test511() {
+
+    }
+    function test512() {
+
+    }
+    function test513() {
+
+    }
+    function test514() {
+
+    }
+
+    function test515() {
+
+    }
+    function test516() {
+
+    }
+
+
+
+  </script>
+</head>
+<body>
+
+<h2>Основы JavaScript</h2>
+<button class="accordion">5_1</button>
+<div class="panel">
+  <p class="mytext">Создайте программу на языке JavaScript, где я смогу выполнить следующее уравнение: y = x2 + 2x - 1</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test51()"></p>
+</div>
+
+<button class="accordion">5_2</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, которая запрашивает два числа a и b через браузер. Если a делится на b, то выведите через
+    функцию alert() слово - "Divisible", иначе "Not Divisible".</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test52()"></p>
+</div>
+
+<button class="accordion">5_3</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, которая запрашивает пользователя ввести имя, фамилию, город и возраст. В конце программа должна
+    вывести результат через alert() в таком формате:</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test53()"></p>
+</div>
+
+<button class="accordion">5_4</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, в которой я ввожу три целостных числа a, b и c. Выведите сумму, умножение и разницу всех этих
+    чисел.</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test54()"></p>
+</div>
+
+<button class="accordion">5_5</button>
+<div class="panel">
+  <p class="mytext">n школьников делят k яблок поровну, неделящийся остаток остается в корзинке. Сколько яблок достанется каждому школьнику? Создайте программу, в которой я ввожу числа n и k. Выведите результат.</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test55()"></p>
+</div>
+
+<button class="accordion">5_6</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, в которой я ввожу стороны прямоугольного треугольника. Выведите гипотенузу.</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test56()"></p>
+</div>
+
+<button class="accordion">5_7</button>
+<div class="panel">
+  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test57()"></p>
+</div>
+<button class="accordion">5_8</button>
+<div class="panel">
+  <p class="mytext">Ильясу срочно нужно купить своей кошке несколько пачек вискаса. В супермаркете 1 вискас стоит 120 тенге. Но если в этом супермаркете купить товар на сумму свыше 4000 тенге, то вам дадут кэшбэк 10%. Напишите программу на JavaScript где мы вводим количество вискасов которые хотим купить. В конце программа должна вывести, какую сумму Ильяс должен заплатить, с учетом условии супермаркета.</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test58()"></p>
+</div>
+<button class="accordion">5_9</button>
+<div class="panel">
+  <p class="mytext">Ержану нужно обменять деньги в обменнике. Напишите программу, где Ержан вводит количество денег в тенге и номер валюты на которую хочет Ержан их обменять. При запуске страницы, браузер запрашивает количество денег и выведет варианты валют, как приведено ниже:     INSERT YOUR AMOUNT IN KZT:
+    1- CONVERT TO USD
+    2- CONVERT TO EUR
+    3- CONVERT TO GBP
+    <br>
+    (Курсы валют: USD - 380KZT, EUR - 430KZT, GBP - 480KZT)</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test59()"></p>
+</div>
+<button class="accordion">5_10</button>
+<div class="panel">
+  <p class="mytext">Напишите программу где я ввожу логин и пароль. И если они совпадают, то мы выводим Authentication completed, иначе Invalid login or password.
+
+    (Логин должен быть user, пароль - qwerty)</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test510()"></p>
+</div>
+<button class="accordion">5_11</button>
+<div class="panel">
+  <p class="mytext">Напишите программу где я ввожу год. Требуется определить, является ли данный год високосным. (Напомним, что год является високосным, если его номер делится 4, но не делится 100, или если он делится 400.) Вводится единственное число - номер года (целое, положительное, не превышает 30000). Требуется вывести слово YES, если год является високосным и NO - в противном случае.</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test511()"></p>
+</div>
+<button class="accordion">5_12</button>
+<div class="panel">
+  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test512()"></p>
+</div>
+<button class="accordion">5_13</button>
+<div class="panel">
+  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test513()"></p>
+</div>
+<button class="accordion">5_14</button>
+<div class="panel">
+  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test514()"></p>
+</div>
+<button class="accordion">5_15</button>
+<div class="panel">
+  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test515()"></p>
+</div>
+<button class="accordion">5_16</button>
+<div class="panel">
+  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test516()"></p>
+</div>
+
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
