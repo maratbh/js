@@ -63,6 +63,7 @@
       -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
       box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
     }
+
     .mytext {
       font-family: arial, helvetica, sans-serif;
       font-size: medium;
@@ -104,107 +105,471 @@
     function test55() {
       n = parseInt(prompt("Enter n"));
       k = parseInt(prompt("Enter k"));
-      alert("k/n = " + parseInt(k/n));
+      alert("k/n = " + parseInt(k / n));
     }
 
     function test56() {
       a = parseInt(prompt("Enter a"));
       b = parseInt(prompt("Enter b"));
-      c = parseFloat((a*a + b*b));
+      c = parseFloat((a * a + b * b));
       c = Math.sqrt(c);
 
       alert("hypotenuse = " + c);
     }
+
     function test57() {
       a = parseInt(prompt("Enter speed (km/h)"));
       b = parseInt(prompt("Enter distance (km)"));
-      c = parseFloat(b/a*60);
+      c = parseFloat(b / a * 60);
       const d = 135;
 
       if (c < d) alert("YES, YOU CAN REACH");
       else alert("NO, YOU CAN NOT REACH");
     }
+
     function test58() {
       a = parseInt(prompt("Enter the number of packs Whiskas(R)"));
       const b = 120;
-      c = a*b;
-      if (c >= 4000) alert(c - parseFloat(c/10));
+      c = a * b;
+      if (c >= 4000) alert(c - parseFloat(c / 10));
       else alert(c);
 
     }
+
     function test59() {
       a = parseInt(prompt("INSERT YOUR AMOUNT IN KZT"));
       b = parseInt(prompt("Enter choise " + "\n" +
-        "1- CONVERT TO USD"+ "\n" +
+        "1- CONVERT TO USD" + "\n" +
         "2- CONVERT TO EUR" + "\n" +
         "3- CONVERT TO GBP"));
-    if (b==1) alert(a/380);
-    else if (b==2) alert(a/430);
-    else alert(a/480);
+      if (b == 1) alert(a / 380);
+      else if (b == 2) alert(a / 430);
+      else alert(a / 480);
     }
+
     function test510() {
       a = prompt("Enter login");
       b = prompt("Enter password");
-      if ((a=="user") && (b=="qwerty")) alert("Authentication completed");
+      if ((a == "user") && (b == "qwerty")) alert("Authentication completed");
       else alert("Invalid login or password");
     }
+
     function test511() {
+      a = parseInt(prompt("Enter year"));
 
+      if (a >= 0 && a < 30000) {
+        if (((a % 4 == 0) && (a % 100 != 0)) || (a % 400 == 0)) alert("YES");
+        else alert("NO");
+      } else
+        alert("Wrong enter");
     }
+
     function test512() {
-
+      a = parseInt(prompt("enter the number of points of \"Web Technologies\""));
+      if (a >= 90) alert("A");
+      else if ((a >= 75) && (a <= 89)) alert("B");
+      else if ((a >= 60) && (a <= 74)) alert("C");
+      else if ((a >= 50) && (a <= 59)) alert("D");
+      else alert("F");
     }
+
     function test513() {
+      a = parseInt(prompt("Enter choise " + "\n" +
+        "1 - Science" + "\n" +
+        "2 - Humanitarian subjects" + "\n" +
+        "3 - Art" + "\n" +
+        "4 - Sport"));
 
+      if (a == 1) {
+        b = parseInt(prompt("Enter choise " + "\n" +
+          "1 - Math" + "\n" +
+          "2 - Physics"));
+        if (b == 1) alert("You are Financier");
+        else alert("You are Engineer");
+      } else if (a == 2) {
+        b = parseInt(prompt("Enter choise " + "\n" +
+          "1 - History" + "\n" +
+          "2 - Foreign Languages"));
+        if (b == 1) alert("You are Historic or Diplomat  ");
+        else alert("You are Translator");
+      } else if (a == 3) {
+        b = parseInt(prompt("Enter choise " + "\n" +
+          "1 - Drawing" + "\n" +
+          "2 -Singing"));
+        if (b == 1) alert("You are Painter or Architect");
+        else alert("You are Singer or Tamada");
+      } else {
+        b = parseInt(prompt("Enter choise " + "\n" +
+          "1 - Team" + "\n" +
+          "2 - Individual:"));
+        if (b == 1) alert("You are footballer or Basketball player");
+        else alert("You are boxer or tennis player");
+      }
     }
-    function test514() {
 
+    function test514() {
+      a = parseInt(prompt("Enter A"));
+      b = parseInt(prompt("Enter B"));
+      c = parseInt(prompt("Enter C"));
+
+      if ((a + b) > c && (a + c > b) && (b + c > a)) alert("YES");
+      else alert("NO");
     }
 
     function test515() {
-
+      a = parseFloat(prompt("Enter KZT"));
+      if (a % 380 == 0) alert("ONLY " + a / 380 + " USD");
+      else {
+        b = (a % 380 / 380);
+        alert(parseInt(a / 380) + " USD and " + b.toFixed(2) * 100 + " cents");
+      }
     }
+
     function test516() {
+      a = parseFloat(prompt("enter the number of minutes"));
+      if (a % 60 == 0) alert("ONLY " + a / 60 + " HOURS");
+      else {
+        b = (a % 60 / 60) * 60;
+        alert(parseInt(a / 60) + " HOURS and " + Math.ceil(b) + " MINUTES");
+      }
+    }
+
+    function test61() {
+      n = parseInt(prompt("enter n"));
+      arr = [];
+      for (let j = 0; j < n; j++) {
+        temp = parseInt(prompt("enter " + (j + 1) + " value"));
+        arr.push(temp);
+      }
+
+      var str = "";
+
+      for (let j = arr.length - 1; j >= 0; j--) {
+        str += arr[j] + " ";
+      }
+
+      alert(str);
+    }
+
+    function test62() {
+      n = parseInt(prompt("enter n"));
+      arr = [];
+      for (let j = 0; j < n; j++) {
+        temp = parseInt(prompt("enter " + (j + 1) + " value"));
+        arr.push(temp);
+      }
+
+      var maxValue;
+      if (n > 0) maxValue = arr[0];
+
+      for (let j = 1; j < arr.length; j++) {
+        if (arr[j] > maxValue) maxValue = arr[j];
+      }
+
+      alert(maxValue);
+    }
+
+    function test63() {
+      n = parseInt(prompt("enter n"));
+      arr = [];
+      for (let j = 0; j < n; j++) {
+        temp = parseInt(prompt("enter " + (j + 1) + " value"));
+        arr.push(temp);
+      }
+
+      var sumValue = 0;
+
+      for (let j = 0; j < arr.length; j++) {
+        sumValue += arr[j];
+      }
+
+      alert(sumValue + " " + sumValue / arr.length);
+    }
+
+    function test64() {
+      n = parseInt(prompt("enter n"));
+      arr = [];
+      for (let j = 0; j < n; j++) {
+        temp = parseInt(prompt("enter " + (j + 1) + " value"));
+        arr.push(temp);
+      }
+
+      var result = " ";
+
+      for (let j = 0; j < arr.length; j++) {
+        result += arr[j] * arr[j] + " ";
+      }
+
+      alert(result);
+    }
+
+    function test65() {
+      users = [
+        {"login": "ilyas", "password": "qwerty"},
+        {"login": "eldar", "password": "qqqqq"},
+        {"login": "assylkhan", "password": "qweqwe"},
+        {"login": "anel", "password": "asdasd"},
+        {"login": "alibek", "password": "aaaaaa"}
+      ];
+
+      n = prompt("enter Name");
+
+      var found = false;
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].login == n) {
+          found = true;
+          break;
+        }
+        ;
+      }
+
+      if (found) alert("Welcome, you are authenticated");
+      else alert("User not found");
+
+      alert(text);
+    }
+
+    function test66() {
+      users = [
+        {"name": "Harry Potter and the Philosopher's Stone", "author": "Joanne Rowling", "ISBN": 1111, "price": 20},
+        {"name": "Harry Potter and the Chamber of Secrets", "author": "Joanne Rowling", "ISBN": 2111, "price": 60},
+        {"name": "Harry Potter and the Prisoner of Azkaban", "author": "Joanne Rowling", "ISBN": 3111, "price": 30},
+        {"name": "The Black Swan: The Impact of the Highly Improbable", "author": "Taleb", "ISBN": 4111, "price": 40},
+      ];
+
+      n = prompt("enter author");
+
+      var str = "";
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].author == n) {
+          str += users[i].name + " - " + users[i].author + " - " + users[i].ISBN + " - " + users[i].price + "\n";
+        }
+        ;
+      }
+
+      if (str.length != 0) alert(str);
+      else alert("not found");
+    }
+
+    function test71() {
+      n = parseInt(prompt("enter n"));
+      arr = [];
+      for (let j = 0; j < n; j++) {
+        temp = parseInt(prompt("enter " + (j + 1) + " value"));
+        arr.push(temp);
+      }
+
+      num = parseInt(prompt("enter number"));
+      var str = "";
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[j] == num) str += j + "\n";
+      }
+
+      if (str.length != 0) alert("YES " + str);
+      else alert("NO")
+    }
+
+    function test72() {
+      arr = [];
+      while (true) {
+        n = parseInt(prompt("enter n"));
+        if (n != 0) arr.push(n);
+        else break;
+      }
+
+      num = 1;
+
+      for (let j = 0; j < arr.length; j++) {
+        num = num * arr[j];
+      }
+
+      alert(Math.pow(num, 1 / arr.length));
+    }
+
+    function test73() {
+      arr = [];
+      while (true) {
+        n = parseInt(prompt("enter n"));
+        if (n != 0) arr.push(n);
+        else break;
+      }
+
+      str = "";
+
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[j] > 0) str += arr[j] + " ";
+      }
+
+      alert(str);
+    }
+
+    function test74() {
+      n = parseInt(prompt("enter n"));
+      arr = [];
+      for (let j = 0; j < n; j++) {
+        temp = parseInt(prompt("enter " + (j + 1) + " value"));
+        arr.push(temp);
+      }
+      num = 1;
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[j] != 0) num = num * arr[j];
+      }
+
+      alert(num);
 
     }
 
+    function test75() {
 
+    }
+
+    function test76() {
+
+    }
+
+    function test81() {
+      log = document.getElementById("text_1");
+      pas = document.getElementById("password_1");
+
+      if (log.value == "test" && log.value == "test") alert("You are authenticated");
+      else {
+        console.log(log.style);
+        log.style = "border: red solid 1px";
+        pas.style = "border: red solid 1px";
+      }
+    }
+
+    function test82(v) {
+      spanElem = document.getElementById("button_value");
+      numVal = parseInt(spanElem.innerHTML);
+      spanElem.innerHTML = numVal + v;
+    }
+
+    function test83() {
+      tempcard = "1234567811112222";
+      tempcvv = "123";
+
+      if ((document.getElementById("card1").value +
+        document.getElementById("card2").value +
+        document.getElementById("card3").value +
+        document.getElementById("card4").value === tempcard) && (document.getElementById("cvv").value === tempcvv)) {
+        alert("Transaction completed");
+      } else alert("Invalid Data");
+    }
+
+    src_path = ["./img/1.jpeg", "./img/2.jpeg", "./img/3.jpeg", "./img/4.jpeg", "./img/5.jpeg"];
+    var index = 0;
+
+    function test84(val) {
+      if ((val == 1) && (index == src_path.length - 1))
+        index = -1;
+      if ((val == -1) && (index == 0))
+        index = src_path.length;
+
+      index += val;
+      document.getElementById("src_id").src = src_path[index];
+    }
+
+    function test85(t) {
+      document.getElementById("src_id2").src = t.src;
+    }
+
+    function test86() {
+      tempemail = "marat_bh@mail.ru";
+
+      if (document.getElementById("email_p").value === tempemail) {
+        document.getElementById("email_p").innerHTML = "Current email is already use";
+        document.getElementById("email_p").style = "color: red";
+      } else {
+        document.getElementById("email_p").innerHTML = "";
+        document.getElementById("email_p").style = "";
+      }
+      if (document.getElementById("input_password").value.length < 6) {
+        document.getElementById("password_p").innerHTML = "Password length at least must be 6 symbols";
+        document.getElementById("password_p").style = "color: red";
+      } else {
+        document.getElementById("password_p").innerHTML = "";
+        document.getElementById("password_p").style = "";
+      }
+      if (document.getElementById("input_password").value != document.getElementById("input_repassword").value) {
+        document.getElementById("repassword_p").innerHTML = "Password are not same";
+        document.getElementById("repassword_p").style = "color: red";
+      } else {
+        document.getElementById("repassword_p").innerHTML = "";
+        document.getElementById("repassword_p").style = "";
+      }
+
+
+      document.getElementById("input_email").value;
+      document.getElementById("input_password").value;
+      document.getElementById("input_repassword").value;
+    }
+
+    function test87() {
+      cur_option = document.getElementById("cur_option").selectedIndex;
+      sum = parseFloat(document.getElementById("input_value").value);
+
+      if (cur_option == 0) {
+        document.getElementById("kzt_value").value = "-";
+        document.getElementById("usd_value").value = (sum / 431).toFixed(2);
+        document.getElementById("eur_value").value = (sum / 509).toFixed(2);
+      } else if (cur_option == 1) {
+        document.getElementById("kzt_value").value = (sum*429).toFixed(2);
+        document.getElementById("usd_value").value = "-";
+        document.getElementById("eur_value").value = (sum/1.18).toFixed(2);
+
+      } else {
+        document.getElementById("kzt_value").value = (sum*507).toFixed(2);
+        document.getElementById("usd_value").value = (sum*1.18).toFixed(2);
+        document.getElementById("eur_value").value = "-";
+      }
+
+
+      //document.getElementById("input_value").value;
+
+
+    }
 
   </script>
 </head>
 <body>
 
-<h2>Основы JavaScript</h2>
+<h2 align="center">Основы JavaScript</h2>
 <button class="accordion">5_1</button>
 <div class="panel">
-  <p class="mytext">Создайте программу на языке JavaScript, где я смогу выполнить следующее уравнение: y = x2 + 2x - 1</p>
+  <p class="mytext">Создайте программу на языке JavaScript, где я смогу выполнить следующее уравнение: y = x2 + 2x -
+    1</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test51()"></p>
 </div>
 
 <button class="accordion">5_2</button>
 <div class="panel">
-  <p class="mytext">Создайте программу, которая запрашивает два числа a и b через браузер. Если a делится на b, то выведите через
+  <p class="mytext">Создайте программу, которая запрашивает два числа a и b через браузер. Если a делится на b, то
+    выведите через
     функцию alert() слово - "Divisible", иначе "Not Divisible".</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test52()"></p>
 </div>
 
 <button class="accordion">5_3</button>
 <div class="panel">
-  <p class="mytext">Создайте программу, которая запрашивает пользователя ввести имя, фамилию, город и возраст. В конце программа должна
+  <p class="mytext">Создайте программу, которая запрашивает пользователя ввести имя, фамилию, город и возраст. В конце
+    программа должна
     вывести результат через alert() в таком формате:</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test53()"></p>
 </div>
 
 <button class="accordion">5_4</button>
 <div class="panel">
-  <p class="mytext">Создайте программу, в которой я ввожу три целостных числа a, b и c. Выведите сумму, умножение и разницу всех этих
+  <p class="mytext">Создайте программу, в которой я ввожу три целостных числа a, b и c. Выведите сумму, умножение и
+    разницу всех этих
     чисел.</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test54()"></p>
 </div>
 
 <button class="accordion">5_5</button>
 <div class="panel">
-  <p class="mytext">n школьников делят k яблок поровну, неделящийся остаток остается в корзинке. Сколько яблок достанется каждому школьнику? Создайте программу, в которой я ввожу числа n и k. Выведите результат.</p>
+  <p class="mytext">n школьников делят k яблок поровну, неделящийся остаток остается в корзинке. Сколько яблок
+    достанется каждому школьнику? Создайте программу, в которой я ввожу числа n и k. Выведите результат.</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test55()"></p>
 </div>
 
@@ -216,17 +581,26 @@
 
 <button class="accordion">5_7</button>
 <div class="panel">
-  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени
+    Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины
+    (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести
+    успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT
+    REACH".</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test57()"></p>
 </div>
 <button class="accordion">5_8</button>
 <div class="panel">
-  <p class="mytext">Ильясу срочно нужно купить своей кошке несколько пачек вискаса. В супермаркете 1 вискас стоит 120 тенге. Но если в этом супермаркете купить товар на сумму свыше 4000 тенге, то вам дадут кэшбэк 10%. Напишите программу на JavaScript где мы вводим количество вискасов которые хотим купить. В конце программа должна вывести, какую сумму Ильяс должен заплатить, с учетом условии супермаркета.</p>
+  <p class="mytext">Ильясу срочно нужно купить своей кошке несколько пачек вискаса. В супермаркете 1 вискас стоит 120
+    тенге. Но если в этом супермаркете купить товар на сумму свыше 4000 тенге, то вам дадут кэшбэк 10%. Напишите
+    программу на JavaScript где мы вводим количество вискасов которые хотим купить. В конце программа должна вывести,
+    какую сумму Ильяс должен заплатить, с учетом условии супермаркета.</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test58()"></p>
 </div>
 <button class="accordion">5_9</button>
 <div class="panel">
-  <p class="mytext">Ержану нужно обменять деньги в обменнике. Напишите программу, где Ержан вводит количество денег в тенге и номер валюты на которую хочет Ержан их обменять. При запуске страницы, браузер запрашивает количество денег и выведет варианты валют, как приведено ниже:     INSERT YOUR AMOUNT IN KZT:
+  <p class="mytext">Ержану нужно обменять деньги в обменнике. Напишите программу, где Ержан вводит количество денег в
+    тенге и номер валюты на которую хочет Ержан их обменять. При запуске страницы, браузер запрашивает количество денег
+    и выведет варианты валют, как приведено ниже: INSERT YOUR AMOUNT IN KZT:
     1- CONVERT TO USD
     2- CONVERT TO EUR
     3- CONVERT TO GBP
@@ -236,40 +610,237 @@
 </div>
 <button class="accordion">5_10</button>
 <div class="panel">
-  <p class="mytext">Напишите программу где я ввожу логин и пароль. И если они совпадают, то мы выводим Authentication completed, иначе Invalid login or password.
+  <p class="mytext">Напишите программу где я ввожу логин и пароль. И если они совпадают, то мы выводим Authentication
+    completed, иначе Invalid login or password.
 
     (Логин должен быть user, пароль - qwerty)</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test510()"></p>
 </div>
 <button class="accordion">5_11</button>
 <div class="panel">
-  <p class="mytext">Напишите программу где я ввожу год. Требуется определить, является ли данный год високосным. (Напомним, что год является високосным, если его номер делится 4, но не делится 100, или если он делится 400.) Вводится единственное число - номер года (целое, положительное, не превышает 30000). Требуется вывести слово YES, если год является високосным и NO - в противном случае.</p>
+  <p class="mytext">Напишите программу где я ввожу год. Требуется определить, является ли данный год високосным.
+    (Напомним, что год является високосным, если его номер делится 4, но не делится 100, или если он делится 400.)
+    Вводится единственное число - номер года (целое, положительное, не превышает 30000). Требуется вывести слово YES,
+    если год является високосным и NO - в противном случае.</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test511()"></p>
 </div>
 <button class="accordion">5_12</button>
 <div class="panel">
-  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p class="mytext">Напишите программу, где я ввожу количество баллов за семестр по "Web Technologies". Программа должна
+    отобразить, какую я оценку получил за семестр в буквах.
+    <br>
+    Система оценки выглядит таким образом:
+    <br>
+    90 и выше - A
+    <br>
+    75 и выше - B
+    <br>
+    60 и выше - C
+    <br>
+    50 и выше - D</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test512()"></p>
 </div>
 <button class="accordion">5_13</button>
 <div class="panel">
-  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p class="mytext">Напишите программу, которая может определить вашу будущую профессию по вашим способностям.</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test513()"></p>
 </div>
 <button class="accordion">5_14</button>
 <div class="panel">
-  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p class="mytext">Даны три натуральных числа a, b, c, записанные в отдельных строках. Напишите программу которая
+    определяет, существует ли треугольник с такими сторонами.
+    Если треугольник существует, выведите строку YES, иначе выведите строку NO.
+    REACH".</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test514()"></p>
 </div>
 <button class="accordion">5_15</button>
 <div class="panel">
-  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p class="mytext">Мне срочно нужно обменять деньги в обменнике с тенге на доллар. Программа должна определить сколько
+    долларов и сколько центов я должен получить. Если все деньги я получу в долларах без центов, то соотвественно формат
+    вывода должен быть другим, как показано ниже в примерах (Курс доллара 380 тенге):</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test515()"></p>
 </div>
 <button class="accordion">5_16</button>
 <div class="panel">
-  <p class="mytext">Мне срочно нужно успеть на свадьбу Абая и Зарины, которая начнется в 18:00 по местному времени Актобе. Я нахожусь в другом городе. Создайте программу на языке JavaScript, где я ввожу среднюю скорость моей машины (в км/ч) и дистанцию между Актобе и моим местоположением (км). Сейчас на часах время 15:45. Программа должна вывести успею ли я на той или нет. Если успею, то программа должна вывести "YES, YOU CAN REACH", иначе "NO, YOU CAN NOT REACH".</p>
+  <p class="mytext">Напишите программу, которая конвертирует цифру введенный в минутах в часы и минуты как показано в
+    нижних примерах:</p>
   <p><input type="button" class="RunButton" value="Выполнить" onclick="test516()"></p>
+</div>
+<h2 align="center">Циклы</h2>
+<button class="accordion">6_1</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, в которой мы сначала вводим число n, затем n элементов и сохраняем все введенные
+    числа в массив. Выведите в конце все элементы в обратном порядке.
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test61()"></p>
+</div>
+<button class="accordion">6_2</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, в которой мы сначала вводим число n, затем n элементов и сохраняем все введенные
+    числа в массив. Выведите в конце максимальный элемент из массива.
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test62()"></p>
+</div>
+<button class="accordion">6_3</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, в которой мы сначала вводим число n, затем n элементов и сохраняем все введенные
+    числа в массив. Выведите в конце сумму и среднее значение всех чисел из массива.
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test63()"></p>
+</div>
+<button class="accordion">6_4</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, в которой мы сначала вводим число n, затем n элементов и сохраняем все введенные
+    числа в массив. Выведите в конце квадраты всех введенных чисел.
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test64()"></p>
+</div>
+<button class="accordion">6_5</button>
+<div class="panel">
+  <p class="mytext">Создайте программу, в которой мы храним список всех пользователей (логин и пароль) в виде массива.
+    При запуске браузера у юзера запрашивают логин и пароль. Если существует такой пользователь в массиве, то юзер
+    должен получить сообщение в браузере: "Welcome, you are authenticated", но если такого пользователя не существует,
+    то выведите сообщение: "User not found".
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test65()"></p>
+</div>
+<button class="accordion">6_6</button>
+<div class="panel">
+  <p class="mytext">Создайте простую программу, в которой мы делаем поиск по автору книги. У меня имеется массив книг, у
+    которых есть такие параметры как: Наименование Автор ISBN Цена
+    Делаем мы поиск по наименованию. Все книги заранее записаны в массив (можете смело добавлять свои любимые книги в
+    произвольном порядке).
+
+    *** Используйте двумерный ассоциативный массив для хранения книг в массиве.
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test66()"></p>
+</div>
+<h2 align="center">Массивы</h2>
+<button class="accordion">7_1</button>
+<div class="panel">
+  <p class="mytext">Программа запрашивает число n. Далее, мы вводим n чисел и сохраняем все введенные числа в массив.
+    Далее, программа запрашивает пользователя число m. Если число m существует в нашем массиве, программа должна вывести
+    слово "Yes" и вывести индекс (расположение, адрес) данного числа. Иначе вывести слово "No".
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test71()"></p>
+</div>
+<button class="accordion">7_2</button>
+<div class="panel">
+  <p class="mytext">Напишите программу которая запрашивает числа пока мы не введем 0. Все введенные числа кроме 0 должны
+    записываться в массив. В итоге выведите геометрическую среднюю введенных чисел.
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test72()"></p>
+</div>
+<button class="accordion">7_3</button>
+<div class="panel">
+  <p class="mytext">Напишите программу которая запрашивает числа пока мы не введем 0. Все введенные числа кроме 0 должны
+    записываться в массив. В итоге выведите только положительные элементы.
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test73()"></p>
+</div>
+
+<button class="accordion">7_4</button>
+<div class="panel">
+  <p class="mytext">Вводим число n. Затем n элементов и записываем все элементы в массив. В итоге выведите умножение
+    элементов не равных нулю.
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test74()"></p>
+</div>
+<h2 align="center">DOM, HTML, CSS</h2>
+<button class="accordion">8_1</button>
+<div class="panel">
+  <p class="mytext">
+    LOGIN:<input type="text" id="text_1"><br>
+    PASSWORD:<input type="password" id="password_1">
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test81()"></p>
+</div>
+<button class="accordion">8_2</button>
+<div class="panel">
+  <p class="mytext">
+    <input type="button" id="button_min" value="-" onclick="test82(-1)">
+    <span id="button_value">21</span>
+    <input type="button" id="button_pl" value="+" onclick="test82(1)">
+  </p>
+</div>
+<button class="accordion">8_3</button>
+<div class="panel">
+  <p class="mytext">Создайте страницу, в котором вы вводите номер карточки банка, имя фамилия и CVV код. Если окажется
+    что в базе отсутствует такой аккаунт, то у вас выйдет сообщение "Invalid Data", иначе выйдет - "Transaction
+    completed". Самые главные две критерии проверки, это - номер карты и CVV код:</p>
+  <p>
+    CARD: <input type="text" maxlength="4" size="2" id="card1">
+    <input type="text" maxlength="4" size="2" id="card2">
+    <input type="text" maxlength="4" size="2" id="card3">
+    <input type="text" maxlength="4" size="2" id="card4">
+    <br><br>
+    NAME SURNAME <input type="text">
+    <br><br>
+    CVV <input type="password" maxlength="3" size="2" id="cvv">
+  </p>
+  <p><input type="button" class="RunButton" value="Выполнить" onclick="test83()"></p>
+</div>
+<button class="accordion">8_4</button>
+<div class="panel">
+  <p class="mytext">
+    <img src="./img/1.jpeg" width="500px" id="src_id">
+    <br>
+    <input type="button" value="<BACK" onclick="test84(-1)">
+    <input type="button" value="NEXT>" onclick="test84(1)">
+  </p>
+</div>
+<button class="accordion">8_5</button>
+<div class="panel">
+  <p class="mytext">
+    <img src="./img/1.jpeg" width="500px" id="src_id2">
+    <br>
+    <img src="./img/1.jpeg" width="95px" onclick="test85(this)">
+    <img src="./img/2.jpeg" width="95px" onclick="test85(this)">
+    <img src="./img/3.jpeg" width="95px" onclick="test85(this)">
+    <img src="./img/4.jpeg" width="95px" onclick="test85(this)">
+    <img src="./img/5.jpeg" width="95px" onclick="test85(this)">
+  </p>
+</div>
+<button class="accordion">8_6</button>
+<div class="panel">
+  <p class="mytext">
+    Email<br>
+    <input type="text" size="40" id="input_email">
+  <p id="email_p"></p>
+  Password<br>
+  <input type="password" size="40" id="input_password">
+  <p id="password_p"></p>
+  Retype Password<br>
+  <input type="password" size="40" id="input_repassword"> <input type="button" value="Register" onclick="test86()"></p>
+  <p id="repassword_p"></p>
+</div>
+<button class="accordion">8_7</button>
+<div class="panel">
+  <p class="mytext">
+  <div
+    style="width: 80%; height: 50%; color: #999999; border: 1px solid; margin: auto; display: flex; justify-content: space-around">
+    <div>Введите сумму<br>
+      <input type="text" placeholder="Введите сумму" onchange="test87()" id="input_value">
+      <select id="cur_option" onchange="test87()">
+        <option>KZT</option>
+        <option>USD</option>
+        <option>EUR</option>
+      </select>
+    </div>
+    <div><b>KZT (тенге)</b><br>
+      <input type="text" id="kzt_value">
+    </div>
+    <div><b>USD (dollar)</b><br>
+      <input type="text" id="usd_value">
+    </div>
+    <div><b>EUR (euro)</b><br>
+      <input type="text" id="eur_value">
+    </div>
+  </div>
+
+
+</div>
+</p>
 </div>
 
 
